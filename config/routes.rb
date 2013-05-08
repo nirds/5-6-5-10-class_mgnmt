@@ -3,6 +3,9 @@ ClassMngmt::Application.routes.draw do
 
   root :to => 'students#index'
 
+  match '/hello' => 'welcome#hello'
+  match '/welcome' => 'welcome#welcome'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
