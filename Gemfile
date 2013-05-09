@@ -7,6 +7,12 @@ group :production do
   gem 'pg'
 end
 
+group :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
