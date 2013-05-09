@@ -1,7 +1,10 @@
 ClassMngmt::Application.routes.draw do
+  resources :assignments
+
+
   resources :students
 
-  root :to => 'students#index'
+  root :to => 'assignments#index'
 
   match '/hello' => 'welcome#hello'
   match '/welcome' => 'welcome#welcome'
