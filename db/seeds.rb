@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+names = Student.all.map{|s| s.full_name}
+unless names.include?("Renee")
+  Student.create(full_name: "Renee", title: "Teacher", email: "renee@nird.us")
+end

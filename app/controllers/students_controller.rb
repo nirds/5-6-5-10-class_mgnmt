@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       format.html { render 'index', layout:  l } 
+      format.iphone { render 'index', layout:  l }
       format.json { render json: @students }
       format.xml { render xml: @students }
     end
