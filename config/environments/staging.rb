@@ -36,6 +36,6 @@ ClassMngmt::Application.configure do
   config.assets.debug = true
 end
 
-APP_URL = "http://localhost:3000"
+APP_URL = "http://staging.nird.us"
 
 
