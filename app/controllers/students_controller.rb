@@ -4,8 +4,10 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
 
+    l = ['application', 'hello'].sample
+
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render 'index', layout:  l } 
       format.json { render json: @students }
       format.xml { render xml: @students }
     end
