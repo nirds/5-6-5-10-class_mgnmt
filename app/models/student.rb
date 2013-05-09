@@ -9,6 +9,8 @@ class Student < ActiveRecord::Base
 
   before_create :set_defaults
 
+  scope :renee, where(full_name: "Renee")
+
 private
   def set_defaults
     self.title = "N/A" if title.blank?
