@@ -1,5 +1,13 @@
 class Student < ActiveRecord::Base
-  attr_accessible :age, :bio, :full_name, :title, :email
+  # Include default devise modules. Others available are:
+  # :token_authenticatable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :age, :bio, :full_name, :title, :email, 
+                  :password, :password_confirmation, :remember_me
   has_many :student_courses
   has_many :courses#, :through => :student_courses
 
