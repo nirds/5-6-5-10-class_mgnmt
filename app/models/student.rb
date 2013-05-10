@@ -6,10 +6,12 @@ class Student < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :age, :bio, :full_name, :title, :email, 
+  attr_accessible :age, :bio, :full_name, :title, :email, :picture, :picture_cache,
                   :password, :password_confirmation, :remember_me
   has_many :student_courses
   has_many :courses#, :through => :student_courses
+
+  mount_uploader :picture, PictureUploader
 
   validates_presence_of :email
   validates :full_name, format:  { with: /\w*@\w*.\w*/,

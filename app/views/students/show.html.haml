@@ -1,11 +1,13 @@
 - model_class = Student
 .page-header
   %h1=t '.title', :default => model_class.model_name.human
-  
+
 %p
   %strong= model_class.human_attribute_name(:full_name) + ':'
   %br
   = @student.full_name
+  %br
+  = image_tag(@student.picture_url) if @student.picture? 
 %p
   %strong= model_class.human_attribute_name(:title) + ':'
   %br
@@ -70,6 +72,10 @@
   %strong= model_class.human_attribute_name(:unconfirmed_email) + ':'
   %br
   = @student.unconfirmed_email
+%p
+  %strong= model_class.human_attribute_name(:picture) + ':'
+  %br
+  = @student.picture
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), students_path, :class => 'btn'
