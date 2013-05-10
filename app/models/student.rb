@@ -12,8 +12,8 @@ class Student < ActiveRecord::Base
   has_many :courses#, :through => :student_courses
 
   validates_presence_of :email
-  validates :email, format:  { with: /\w*@\w*.\w*/,
-    message: "is not valid, must contain an @" }
+  validates :full_name, format:  { with: /\w*@\w*.\w*/,
+    message: I18n.t('student.valid_msg') }
 
   before_create :set_defaults
   after_create :send_admin_email

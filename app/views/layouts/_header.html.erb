@@ -1,5 +1,6 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<h1><%= t 'hello' %> </h1>
 <% if current_student %>
   You are signed in as: <%= current_student.email %>
   <%= link_to 'Sign Out', destroy_student_session_path, method: :delete %>
