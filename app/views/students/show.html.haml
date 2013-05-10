@@ -1,0 +1,77 @@
+- model_class = Student
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+  
+%p
+  %strong= model_class.human_attribute_name(:full_name) + ':'
+  %br
+  = @student.full_name
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @student.title
+%p
+  %strong= model_class.human_attribute_name(:age) + ':'
+  %br
+  = @student.age
+%p
+  %strong= model_class.human_attribute_name(:bio) + ':'
+  %br
+  = @student.bio
+%p
+  %strong= model_class.human_attribute_name(:email) + ':'
+  %br
+  = @student.email
+%p
+  %strong= model_class.human_attribute_name(:encrypted_password) + ':'
+  %br
+  = @student.encrypted_password
+%p
+  %strong= model_class.human_attribute_name(:reset_password_token) + ':'
+  %br
+  = @student.reset_password_token
+%p
+  %strong= model_class.human_attribute_name(:reset_password_sent_at) + ':'
+  %br
+  = @student.reset_password_sent_at
+%p
+  %strong= model_class.human_attribute_name(:remember_created_at) + ':'
+  %br
+  = @student.remember_created_at
+%p
+  %strong= model_class.human_attribute_name(:current_sign_in_at) + ':'
+  %br
+  = @student.current_sign_in_at
+%p
+  %strong= model_class.human_attribute_name(:last_sign_in_at) + ':'
+  %br
+  = @student.last_sign_in_at
+%p
+  %strong= model_class.human_attribute_name(:current_sign_in_ip) + ':'
+  %br
+  = @student.current_sign_in_ip
+%p
+  %strong= model_class.human_attribute_name(:last_sign_in_ip) + ':'
+  %br
+  = @student.last_sign_in_ip
+%p
+  %strong= model_class.human_attribute_name(:confirmation_token) + ':'
+  %br
+  = @student.confirmation_token
+%p
+  %strong= model_class.human_attribute_name(:confirmed_at) + ':'
+  %br
+  = @student.confirmed_at
+%p
+  %strong= model_class.human_attribute_name(:confirmation_sent_at) + ':'
+  %br
+  = @student.confirmation_sent_at
+%p
+  %strong= model_class.human_attribute_name(:unconfirmed_email) + ':'
+  %br
+  = @student.unconfirmed_email
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), students_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_student_path(@student), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), student_path(@student), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

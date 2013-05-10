@@ -1,0 +1,17 @@
+%h1 My Assignments
+%table
+  %tr
+    %th Title
+    %th Details
+    %th Due date
+    %th Done
+    %th
+    %th
+  %tr
+    %th{:span => "6"} Completed Assignments
+  = render 'assignments', assignments: @completed_assignments
+  %tr
+    %th{:span => "6"} Pending Assignments
+  = render 'assignments', assignments: @pending_assignments
+%br/
+= link_to 'New Assignment', new_assignment_path
