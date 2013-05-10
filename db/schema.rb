@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130510141110) do
+ActiveRecord::Schema.define(:version => 20130510183521) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -61,5 +61,11 @@ ActiveRecord::Schema.define(:version => 20130510141110) do
   add_index "students", ["confirmation_token"], :name => "index_students_on_confirmation_token", :unique => true
   add_index "students", ["email"], :name => "index_students_on_email"
   add_index "students", ["reset_password_token"], :name => "index_students_on_reset_password_token", :unique => true
+
+  create_table "topics", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

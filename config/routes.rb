@@ -1,4 +1,7 @@
 ClassMngmt::Application.routes.draw do
+  resources :topics
+
+
   devise_for :students
 
   resources :assignments
